@@ -15,6 +15,23 @@ function Game() {
     const path = usePathname();
     const router = useRouter();
 
+    // setInterval(() => {
+    //     if (path !== `/game/${gameId}`)
+    //         gameSocket.emit('leaveGame');
+    // }, 1000);
+
+
+    useEffect(() => {
+        gameSocket.on('GameIdNotValid', () => {
+            router.push('/Dashboard');
+        })
+
+
+        return () => {
+            gameSocket.off('GameIdNotValid')
+        }
+    }, [gameSocket])
+
 
     useEffect(() => {
         gameSocket.on('redirToDash', () => {
@@ -42,6 +59,15 @@ function Game() {
             gameSocket.off('redirToDash');
         };
     },[gameSocket]);
+<<<<<<< HEAD
+=======
+    
+
+
+    useEffect(() => {
+        gameSocket.emit('GameExist', {roomId: gameId})
+    }, [gameId])
+>>>>>>> hmoubal/newFeatures
 
     return (
         <main className="main flex bg-cyan-900 justify-center items-center h-screen w-screen">
