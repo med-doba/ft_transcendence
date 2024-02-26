@@ -55,7 +55,7 @@ function Dashboard() {
 
   return (
     <main className="flex flex-col font-white bg-main mr-2 h-screen">
-      <TopBar />
+      {/* <TopBar /> */}
       <div className="flex flex-col h-[95%] lg:mt-5 md:mt-10 mt-10 xl:mt-5">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-5 lg:grid-rows-3 gap-5 w-full h-full mt-4 md:grid-row-5 grid-row-5">
           <div className="relative p-0 rounded-md col-span-1 lg:col-span-3 lg:h-[100%] md:h-[300px] h-[300px] xl:h-[100%] lg:w-full shadow-md" style={{backgroundImage: `url(${theme})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
